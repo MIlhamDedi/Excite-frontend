@@ -7,6 +7,10 @@ Frontend of URECA Excite! App
 2. watchman
 3. yarn
 4. react-native-cli
+5. Android SDK
+6. java 8
+
+install package dependencies with ```yarn install```
 
 ## Run
 
