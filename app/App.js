@@ -1,51 +1,48 @@
-import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { Navigation } from 'react-native-navigation';
+import {registerScreens} from './screens'
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+registerScreens();
 
-export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-      </View>
-    );
+const navigatorStyle = {
+  navigationBarColor: '#FFFFFF',
+  statusBarColor: '#00000033',
+  statusBarTextColorScheme: 'light',
+  drawUnderStatusBar: true,
+  navBarHidden: true,
+};
+
+Navigation.startTabBasedApp({
+  tabs: [
+    {
+      label: 'Home',
+      screen: 'ExciteTry.HomeScreen',
+      navigatorStyle
+    },
+    {
+      label: 'Swipe',
+      screen: 'ExciteTry.Swipe',
+      navigatorStyle
+    },
+    {
+      label: 'Explore',
+      screen: 'ExciteTry.Explore',
+      navigatorStyle
+    },
+    {
+      label: 'Profile',
+      screen: 'ExciteTry.Profile',
+      icon: icons.profile,
+      navigatorStyle: {
+        navigationBarColor: '#FFFFFF',
+        statusBarColor: '#00000033',
+        statusBarTextColorScheme: 'dark',
+        drawUnderStatusBar: true,
+        navBarHidden: true,
+      }
+    },
+  ],
+  appStyle:{
+    orientation: 'portrait',
+    tabBarSelectedButtonColor: '#f44336',
   }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
 });
