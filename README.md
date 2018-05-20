@@ -4,18 +4,25 @@ Frontend of URECA Excite! App
 ## Dependencies
 
 1. node
-2. watchman
-3. yarn
-4. react-native-cli
-5. Android SDK
-6. JDK
-
-install node dependencies with `yarn install`
+2. yarn
+3. react-native-cli
+    - install with `npm install -g react-native-cli`
+4. Android SDK
+    - Android SDK Platform 26
+    - Android SDK build tools 26.0.2
+    - Android SDK Tools
+    - Android SDK Platform Tools
+    - Android Emulator (optional: For debugging in emulator)
+    - Intel HAXM (optional: For x86 emulator on non-linux OS)
+5. JDK 8
+6. Watchman (For linux and macOS)
+7. Node Packages 
+    - install with `yarn install`
 
 ## Run
 ### Emulator
 
-1. Ensure emulator script is on `$PATH`. Follow [React Native docs](https://facebook.github.io/react-native/docs/getting-started.html) for help
+1. Ensure `emulator` is on `$PATH`. Follow [React Native docs](https://facebook.github.io/react-native/docs/getting-started.html) for help
 2. run `react-native run-android`
 
 ### Android Device
