@@ -1,4 +1,4 @@
-package com.excitetry;
+package com.excite;
 
 import com.facebook.react.ReactPackage;
 import com.reactnativenavigation.NavigationApplication;

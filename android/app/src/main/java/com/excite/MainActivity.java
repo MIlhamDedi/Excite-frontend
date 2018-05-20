@@ -1,4 +1,4 @@
-package com.excitetry;
+package com.excite;
 
 import com.reactnativenavigation.controllers.SplashActivity;
 
