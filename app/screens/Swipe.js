@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import {
   View,
+  Platform,
   Text,
   StyleSheet,
   ToastAndroid,
   TouchableNativeFeedback,
+  AlertIOS,
 } from 'react-native';
 import Swiper from 'react-native-deck-swiper';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -32,19 +34,36 @@ class Swipe extends Component {
                 height: 'auto',
               }}
               infinite={true}
-              onSwipedLeft={(cardIndex) => {ToastAndroid.show("Swiped "+ cardArray[cardIndex] + " To the left" , ToastAndroid.SHORT)}}
-              onSwipedRight={(cardIndex) => {ToastAndroid.show("Swiped "+ cardArray[cardIndex] + " To the Right", ToastAndroid.SHORT)}}
-              onSwipedTop={(cardIndex) => {ToastAndroid.show("Swiped "+ cardArray[cardIndex] + " To the Top", ToastAndroid.SHORT)}}
-              onSwipedBottom={(cardIndex) => {ToastAndroid.show("Swiped "+ cardArray[cardIndex] + " To the Bottom", ToastAndroid.SHORT)}}
+              onSwipedLeft={(cardIndex) => {Platform.OS === 'ios'
+                ? AlertIOS.alert('Alert', 'Swiped ' + cardArray[cardIndex] + ' to the left')
+                : ToastAndroid.show("Swiped "+ cardArray[cardIndex] + " To the left" , ToastAndroid.SHORT)
+              }}
+              onSwipedRight={(cardIndex) => {Platform.OS === 'ios'
+                ? AlertIOS.alert('Alert', 'Swiped ' + cardArray[cardIndex] + ' to the right')
+                : ToastAndroid.show("Swiped "+ cardArray[cardIndex] + " To the right", ToastAndroid.SHORT)
+              }}
+              onSwipedTop={(cardIndex) => {Platform.OS === 'ios'
+                ? AlertIOS.alert('Alert', 'Swiped ' + cardArray[cardIndex] + ' to the top')
+                : ToastAndroid.show("Swiped "+ cardArray[cardIndex] + " To the top", ToastAndroid.SHORT)
+              }}
+              onSwipedBottom={(cardIndex) => {Platform.OS === 'ios'
+                ? AlertIOS.alert('Alert', 'Swiped ' + cardArray[cardIndex] + ' to the bottom')
+                : ToastAndroid.show("Swiped "+ cardArray[cardIndex] + " To the bottom", ToastAndroid.SHORT)}}
               onSwipedAll={() => {ToastAndroid.show("That's all", ToastAndroid.SHORT)}}
-              onTapCard={(cardIndex) => {ToastAndroid.show("Not for tapping (˵>﹏<˵) ", ToastAndroid.SHORT)}}
+              onTapCard={(cardIndex) => {Platform.OS === 'ios'
+                ? AlertIOS.alert('Alert', 'Tap card ' + cardArray[cardIndex])
+                : ToastAndroid.show("Tap card "+ cardArray[cardIndex], ToastAndroid.SHORT)
+              }}
               cardIndex={0}
               backgroundColor={'#f44336'}>
               <View style={{paddingTop: 30, alignItems: 'flex-end', right: 25}} >
                 <View style={{width: 24, height:24, borderRadius: 12, overflow: "hidden"}}>
                   <TouchableNativeFeedback
                     useForeground={true}
-                    onPress={() => {ToastAndroid.show("Info will be shown with this button", ToastAndroid.SHORT)}}>
+                    onPress={() => {Platform.OS === 'ios'
+                        ? AlertIOS.alert('Alert', 'Info will be shown with this button')
+                        : ToastAndroid.show("Info will be shown with this button", ToastAndroid.SHORT)
+                      }}>
                     <View style={{backgroundColor: "#FAFAFA", borderRadius: 12}}>
                       <Icon name="info" size={24} color="#f44336" />
                     </View>
