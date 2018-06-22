@@ -11,7 +11,7 @@ import {
 import Swiper from 'react-native-deck-swiper';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-class Swipe extends Component {
+export default class SwipePage extends Component {
   render() {
     var cardArray = ['Event A', 'Event B', 'Event C', 'Event D', 'Event E', 'Event F']
     return (
@@ -75,7 +75,6 @@ class Swipe extends Component {
     )
   }
 }
-export default Swipe;
 
 const styles = StyleSheet.create({
   container: {

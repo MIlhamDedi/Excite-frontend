@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  Image,
-  ScrollView,
-  StyleSheet,
-  Dimensions,
-} from 'react-native';
+import { View, Text, ScrollView, StyleSheet, Dimensions } from 'react-native';
 import CalendarStrip from 'react-native-calendar-strip';
 import Card from '../component/Card.js';
+import { GoogleSignin } from 'react-native-google-signin'
 
-class HomeScreen extends Component {
+export default class HomePage extends Component {
   constructor(props) {
     super(props);
     this.props.navigator.setOnNavigatorEvent(this.onNavigatorEvent.bind(this));
+    this.state = {
+      user: GoogleSignin.currentUser()
+    }
   }
 
   onNavigatorEvent(event) {
@@ -51,8 +48,7 @@ class HomeScreen extends Component {
           ref={(c) => {this.scroll=c}}
           contentContainerStyle={{alignItems:'center'}}
         >
-          <Text style={styles.headerText}>Here's your schedule today</Text>
-
+          <Text style={styles.headerText}>Here's your schedule today, { this.state.user.name.charAt(0).toUpperCase() + this.state.user.name.slice(1).toLowerCase() }!</Text>
           <Card
             imageSource="https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F40293308%2F78463962731%2F1%2Foriginal.jpg?w=800&rect=0%2C15%2C538%2C269&s=022d3a1f34fa8dfab85721a83c3db39f"
             title="Cloud AI BootCamp - Part I"
@@ -110,5 +106,3 @@ const styles = StyleSheet.create({
     textShadowRadius: 5
   },
 });
-
-export default HomeScreen;
