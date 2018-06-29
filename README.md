@@ -26,6 +26,11 @@ Frontend of URECA Excite! App
     1. macOS
     2. XCode and XCode CLI tools
 
+- Other:
+    1. Firebase Account (for Google Sign-in)
+    2. `google-services.json` (From firebase). Place it on folder `./android/app`
+    3. Google Client Id, From [Google Cloud API Dashboard](https://console.cloud.google.com/apis/credentials?project=excite-181ee). Place it on file `./app/config.js`. `iosClientId` for ios, `webClientId` for andoid
+
 
 ## Run
 ### Emulator
@@ -50,5 +55,5 @@ Check [React Native Docs](https://facebook.github.io/react-native/docs/signed-ap
 <br/>
 
 ###  IOS Emulator
-
+> Only for MacOS
 1. run `react-native run-ios`
