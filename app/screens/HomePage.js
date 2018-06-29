@@ -77,6 +77,7 @@ export default class HomePage extends Component {
 }
 
 var {height, width} = Dimensions.get('window');
+height = height-55;
 const styles = StyleSheet.create({
   container:{
     height: height,
@@ -94,7 +95,7 @@ const styles = StyleSheet.create({
   footerContainer:{
     alignItems: 'center',
     justifyContent: 'center',
-    paddingBottom: 75,
+    paddingBottom: 25,
   },
   footerText:{
     fontSize: 18,

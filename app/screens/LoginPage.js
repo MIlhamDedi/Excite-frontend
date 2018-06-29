@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Button, TouchableOpacity, Platform } from 'react-native';
+import { View, StyleSheet, Platform } from 'react-native';
 import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin'
 import { startMainApp } from '../MainApp'
 import config from '../config'
@@ -15,8 +15,6 @@ export default class LoginPage extends Component {
   componentDidMount() {
     this._setupGoogleSignin()
     if (this.state.user) {
-      console.log(2)
-      console.log(user)
       startMainApp()
     }
   }
@@ -51,8 +49,6 @@ export default class LoginPage extends Component {
       })
       const user = await GoogleSignin.currentUserAsync()
       this.setState({user})
-      console.log(1)
-      console.log(user)
     } catch (err) {
       console.warn('Google SignIn Error', err.code, err.message)
     }
@@ -61,7 +57,6 @@ export default class LoginPage extends Component {
   _signIn() {
     GoogleSignin.signIn()
       .then(user => {
-        console.log(user)
         this.setState({ user: user })
         startMainApp()
       })

@@ -5,10 +5,8 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 registerScreens();
 
 const navigatorStyle = {
-  statusBarColor: '#00000033',
-  statusBarTextColorScheme: 'light',
-  drawUnderStatusBar: true,
   navBarHidden: true,
+  statusBarHidden: true
 }
 
 async function prepareIcons() {
