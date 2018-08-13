@@ -1,5 +1,5 @@
 import { Navigation } from 'react-native-navigation';
-import {registerScreens} from './screens'
+import { registerScreens } from './screens'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 registerScreens();
@@ -50,7 +50,7 @@ export async function startMainApp() {
         navigatorStyle
       },
     ],
-    appStyle:{
+    appStyle: {
       orientation: 'portrait',
       tabBarSelectedButtonColor: '#f44336',
     }

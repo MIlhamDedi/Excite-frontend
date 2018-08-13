@@ -19,12 +19,12 @@ export default class ProfilePage extends Component {
   onNavigatorEvent(event) {
     if (event.id == 'willAppear') {
       if (this.scroll) {
-        this.scroll.scrollTo({x: 0, y: 0, animated: false});
+        this.scroll.scrollTo({ x: 0, y: 0, animated: false });
       }
     }
     if (event.id == 'bottomTabReselected') {
       if (this.scroll) {
-        this.scroll.scrollTo({x: 0, y: 0, animated: true});
+        this.scroll.scrollTo({ x: 0, y: 0, animated: true });
       }
     }
   }
@@ -37,8 +37,8 @@ export default class ProfilePage extends Component {
         </View>
         <ScrollView
           style={styles.scrollContainer}
-          contentContainerStyle={{alignItems: 'flex-start'}}
-          ref={(c) => {this.scroll = c}}
+          contentContainerStyle={{ alignItems: 'flex-start' }}
+          ref={(c) => { this.scroll = c }}
         >
 
         </ScrollView>
@@ -55,14 +55,14 @@ export default class ProfilePage extends Component {
       .done()
   }
 }
-var {height, width} = Dimensions.get('window');
-height = height-55;
+var { height, width } = Dimensions.get('window');
+height = height - 55;
 const styles = StyleSheet.create({
-  container:{
+  container: {
     height: height,
     width: width,
   },
-  headerBar:{
+  headerBar: {
     elevation: 5,
     flex: 1,
     flexDirection: 'column',
@@ -70,6 +70,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: "#f44336",
   },
-  scrollContainer:{
+  scrollContainer: {
   },
 });

@@ -1,19 +1,19 @@
 import { Navigation } from 'react-native-navigation';
-import {registerScreens} from './screens';
+import { registerScreens } from './screens';
 
 registerScreens();
 Navigation.startSingleScreenApp({
   screen: {
     screen: 'ExciteTry.LoginPage',
     title: 'Login',
-    navigatorStyle:{
+    navigatorStyle: {
       statusBarColor: '#00000033',
       statusBarTextColorScheme: 'light',
       drawUnderStatusBar: true,
       navBarHidden: true,
     },
-    navigatorButtons:{}
+    navigatorButtons: {}
   },
   passProps: {},
-  animationType:'slide-down'
+  animationType: 'slide-down'
 })

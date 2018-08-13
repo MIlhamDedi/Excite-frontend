@@ -18,13 +18,13 @@ class Card extends Component {
     const { imageSource, title, time, location } = this.props;
     return (
       <View style={styles.container}>
-        <View style={{elevation: 1, backgroundColor: 'white', borderTopLeftRadius: 10, borderTopRightRadius: 10}} >
-          <Image source={{ uri: imageSource }} style={ styles.image } />
+        <View style={{ elevation: 1, backgroundColor: 'white', borderTopLeftRadius: 10, borderTopRightRadius: 10 }} >
+          <Image source={{ uri: imageSource }} style={styles.image} />
         </View>
         <View style={styles.textContainer} >
           <Text>{title}</Text>
           <Text>{time}</Text>
-          <Text>{location}</Text>          
+          <Text>{location}</Text>
         </View>
       </View>
     )
@@ -32,23 +32,23 @@ class Card extends Component {
 }
 
 const styles = StyleSheet.create({
-  container:{
+  container: {
     backgroundColor: "#FFFFFF",
     marginTop: 20,
     width: 300,
-  	elevation: 3,
-  	flex: 1,
-  	borderRadius: 10,
-  	alignItems: 'flex-start',
-  	justifyContent: 'flex-start'
+    elevation: 3,
+    flex: 1,
+    borderRadius: 10,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start'
   },
-  image:{
+  image: {
     height: 140,
     width: 300,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
   },
-  textContainer:{
+  textContainer: {
     padding: 20,
   }
 });

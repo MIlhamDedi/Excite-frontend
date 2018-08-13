@@ -14,26 +14,27 @@ export default class LoginPage extends Component {
 
   componentDidMount() {
     this._setupGoogleSignin()
-    if (this.state.user) {
-      startMainApp()
-    }
+    startMainApp()
+    // if (this.state.user) {
+    //    startMainApp()
+    // }
   }
 
   render() {
     return (
-      <View style={ styles.container } >
+      <View style={styles.container} >
         <GoogleSigninButton
-          style={{width: 312, height: 48}}
+          style={{ width: 312, height: 48 }}
           size={GoogleSigninButton.Size.Wide}
           color={GoogleSigninButton.Color.Dark}
-          onPress={this._signIn.bind(this)}/>
+          onPress={this._signIn.bind(this)} />
       </View>
     )
   }
 
   async _setupGoogleSignin() {
     try {
-      await GoogleSignin.hasPlayServices({ autoResolve: true})
+      await GoogleSignin.hasPlayServices({ autoResolve: true })
       const configPlatform = {
         ...Platform.select({
           ios: {
@@ -48,7 +49,7 @@ export default class LoginPage extends Component {
         offlineAccess: false
       })
       const user = await GoogleSignin.currentUserAsync()
-      this.setState({user})
+      this.setState({ user })
     } catch (err) {
       console.warn('Google SignIn Error', err.code, err.message)
     }
@@ -68,8 +69,8 @@ export default class LoginPage extends Component {
 }
 
 const styles = StyleSheet.create({
-  container:{
-    flex:1,
+  container: {
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',

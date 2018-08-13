@@ -103,12 +103,12 @@ export default class Timeline extends Component {
               {this.renderCircle(rowData, sectionID, rowID)}
             </View>
           ) : (
-            <View style={[styles.rowContainer, this.props.rowContainerStyle]}>
-              {this.renderEvent(rowData, sectionID, rowID)}
-              {this.renderTime(rowData, sectionID, rowID)}
-              {this.renderCircle(rowData, sectionID, rowID)}
-            </View>
-          );
+              <View style={[styles.rowContainer, this.props.rowContainerStyle]}>
+                {this.renderEvent(rowData, sectionID, rowID)}
+                {this.renderTime(rowData, sectionID, rowID)}
+                {this.renderCircle(rowData, sectionID, rowID)}
+              </View>
+            );
         break;
     }
     return <View key={rowID}>{content}</View>;
@@ -183,19 +183,19 @@ export default class Timeline extends Component {
         opStyle =
           rowID % 2 == 0
             ? {
-                borderColor: lineColor,
-                borderLeftWidth: lineWidth,
-                borderRightWidth: 0,
-                marginLeft: 20,
-                paddingLeft: 20
-              }
+              borderColor: lineColor,
+              borderLeftWidth: lineWidth,
+              borderRightWidth: 0,
+              marginLeft: 20,
+              paddingLeft: 20
+            }
             : {
-                borderColor: lineColor,
-                borderLeftWidth: 0,
-                borderRightWidth: lineWidth,
-                marginRight: 20,
-                paddingRight: 20
-              };
+              borderColor: lineColor,
+              borderLeftWidth: 0,
+              borderRightWidth: lineWidth,
+              marginRight: 20,
+              paddingRight: 20
+            };
         break;
     }
 
@@ -236,8 +236,8 @@ export default class Timeline extends Component {
         </Text>
       </View>
     ) : (
-      <Text style={[styles.title, this.props.titleStyle]}>{rowData.title}</Text>
-    );
+        <Text style={[styles.title, this.props.titleStyle]}>{rowData.title}</Text>
+      );
     return <View style={styles.container}>{title}</View>;
   }
 
